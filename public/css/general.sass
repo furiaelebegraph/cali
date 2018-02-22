@@ -1,0 +1,357 @@
+$naranja: #f99333
+$gris: #5c5f60
+
+@import '_font-helper'
+@import '_helpers'
+
+@include declare-font-face('avenir', 'Avenir-Book', 'regular')
+@include declare-font-face('avenirIt', 'Avenir-BookOblique', 'regular')
+@include declare-font-face('avenirBold', 'Avenir-Black', 'bold')
+@include declare-font-face('avenirBoldIt', 'Avenir-BlackOblique', 'bold' )
+
+
+*
+  font-family: avenir
+  font-size: 14px
+
+.escondido
+  overflow: hidden
+
+.flexeado
+  display: flex
+
+.alineado_centro
+  text-align: center
+
+.icono_logo_20
+  max-width: 165px
+
+.icono_social
+  width: 35px
+
+.escritorio
+  display: none
+
+.mobil
+  display: block
+
+.logo_footer
+  width: 40px
+  margin: 0 auto
+  img
+    width: 100%
+
+.navegacion_footer
+  max-width: 450px
+  margin: 0 auto
+  a
+    color: $gris
+
+.linea_naranja
+  border-top: 1px solid $naranja
+
+.relativo_centrado
+  position: relative
+  left: 50%
+  top: 50%
+  -webkit-transform: translate(-65%, -52%)
+  -moz-transform: translate(-65%, -52%)
+  -ms-transform: translate(-65%, -52%)
+  -o-transform: translate(-65%, -52%)
+  transform: translate(-65%, -52%)
+  z-index: -1
+
+p
+  -webkit-margin-before: 0px
+  -webkit-margin-after: 0px
+  -webkit-margin-start: 0px
+  -webkit-margin-end: 0px
+
+.wrap_porque
+  padding-left: 1em
+  padding-top: 1em    
+  margin-top: 100px
+
+.centro_1000
+  max-width: 1000px
+  width: 100%
+  margin: 0 auto
+
+.centro_800
+  max-width: 800px
+  width: 100%
+  margin: 0 auto
+
+.titulo_porque
+  h1
+    font-size: 30px
+    color: $naranja
+    span
+      font-family: avenirBold
+      font-size: 30px
+      color: $gris
+
+.btn_ver_mas
+  display: inline-block
+  text-align: center
+  a
+    color: white
+    padding: 5px 20px
+    border-radius: 40px
+    background: orange
+    width: 122px
+
+.m-t-270n
+  margin-top: -270px
+
+.niveles_educativos
+  text-align: center
+  a
+    text-decoration: none
+  p
+    font-family: avenirBold
+    color: $gris
+    line-height: 20px
+    font-size: 1.2em
+    span
+      font-family: avenir
+      font-size: 1em
+      color: $naranja
+.img_3
+  width: 150px
+
+.wrap_titulo_3
+  text-align: center
+  position: relative
+  display: table
+  background-position: center
+  background-size: contain
+  background-image: url(../img/fondo_cosita.png)
+  background-repeat: no-repeat
+  padding: 80px
+  margin-left: auto
+  margin-right: auto
+  a
+    text-decoration: none
+    .titulo_3
+      text-align: center
+      transition: all .2s ease-in-out
+      &:hover
+        -webkit-transform: scale(1.1)
+        -moz-transform: scale(1.1)
+        -ms-transform: scale(1.1)
+        -o-transform: scale(1.1)
+        transform: scale(1.1)
+      p
+        font-family: avenirBold
+        color: white
+        font-size: 41px
+        line-height: 37px
+        text-shadow: 5px 5px 5px rgba(0,0,0,0.5)
+
+.texto_porque, .btn_ver_mas 
+  padding-left: 10px
+
+.texto_porque
+  max-width: 450px
+  width: 80%
+
+#nav-icon3
+  width: 35px
+  height: 35px
+  position: relative
+  margin: 5px auto
+  -webkit-transform: rotate(0deg)
+  -moz-transform: rotate(0deg)
+  -o-transform: rotate(0deg)
+  transform: rotate(0deg)
+  -webkit-transition: .5s ease-in-out
+  -moz-transition: .5s ease-in-out
+  -o-transition: .5s ease-in-out
+  transition: .5s ease-in-out
+  cursor: pointer
+
+#nav-icon3 span
+  display: block
+  position: absolute
+  height: 6px
+  width: 100%
+  background: rgba($naranja, 1)
+  border-radius: 9px
+  opacity: 1
+  left: 0
+  -webkit-transform: rotate(0deg)
+  -moz-transform: rotate(0deg)
+  -o-transform: rotate(0deg)
+  transform: rotate(0deg)
+  -webkit-transition: .25s ease-in-out
+  -moz-transition: .25s ease-in-out
+  -o-transition: .25s ease-in-out
+  transition: .25s ease-in-out
+
+.h20
+  height: 20vh
+  display: table
+
+.alto_menu_mobil
+  height: 100vh
+
+.nav_mobil_cali
+  position: fixed
+  z-index: 4
+  background: white
+  width: 100%
+
+.btn_menu_escri
+  color: #f99333
+  margin-right: 10px
+  transition: all .2s ease-in-out
+  display: inline-block
+  &:hover
+    -webkit-transform: translate(0px, -1px)
+    -moz-transform: translate(0px, -1px)
+    -ms-transform: translate(0px, -1px)
+    -o-transform: translate(0px, -1px)
+    transform: translate(0px, -1px)
+    color: #f99333
+    text-decoration: none
+    
+.sombra_nav
+  -webkit-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.25)
+  -moz-box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.25)
+  box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.25)
+
+.menu_mobil
+  width: 100vw
+  height: 100%
+  position: fixed
+  left: -110%
+  background: $naranja
+  z-index: 3
+  transition: all 0.3s ease-in-out
+  .h20:nth-child(2)
+    background-color: #faa95c
+  .h20:nth-child(3)
+    background-color: #fbb471
+  .h20:nth-child(4)
+    background-color: #fbbe85
+  .h20:nth-child(5)
+    background-color: #fcc999
+
+.mostrar_menu
+  left: 0%
+
+#nav-icon3 span:nth-child(1) 
+  top: 0px
+  background: rgba($naranja, 1)
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) 
+  top: 12px
+  background: rgba($naranja, 0.7)
+
+#nav-icon3 span:nth-child(4) 
+  top: 24px
+  background: rgba($naranja, 0.5)
+
+
+#nav-icon3.open span:nth-child(1) 
+  top: 18px
+  width: 0%
+  left: 50%
+
+#nav-icon3.open span:nth-child(2) 
+  -webkit-transform: rotate(45deg)
+  -moz-transform: rotate(45deg)
+  -o-transform: rotate(45deg)
+  transform: rotate(45deg)
+
+#nav-icon3.open span:nth-child(3) 
+  -webkit-transform: rotate(-45deg)
+  -moz-transform: rotate(-45deg)
+  -o-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+
+#nav-icon3.open span:nth-child(4) 
+  top: 18px
+  width: 0%
+  left: 50%
+
+.texto_opcion
+  text-align: center
+  p
+    color: white
+    font-family: avenirBold
+    font-size: 45px
+    line-height: 37px
+    span
+      font-family: avenirIt 
+      font-size: 28px
+      line-height: 25px
+
+.ico_cali
+  width: 25px
+
+.beneficio_cali
+  p, img
+    display: inline-block
+    vertical-align: middle
+  p
+    font-family: avenirBold
+    font-size: 20px
+    color: $gris
+
+.hamburguesita
+  width: 35px
+
+.back_naranja
+  background-color: $naranja
+
+.imagen_niveles
+  position: relative
+  left: -22%
+
+
+.btn_menu_mobil
+  vertical-align: middle
+  display: table-cell
+  a
+    font-family: avenirBold
+    font-size: 20px
+    color: white
+
+@media (min-width:600px)
+  .escritorio
+    display: block
+  .mobil
+    display: none
+  .beneficio_cali
+    p
+      font-size: 30px
+  .titulo_porque
+    h1
+      font-size: 70px
+      span
+        font-size: 70px
+  .wrap_porque
+    padding-left: 3em
+    padding-top: 3em
+    margin-top: 80px
+  .texto_porque, .btn_ver_mas 
+    padding-left: 50px
+  .relativo_centrado
+    -webkit-transform: translate(-50%, -50%)
+    -moz-transform: translate(-50%, -50%)
+    -ms-transform: translate(-50%, -50%)
+    -o-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+  .wrap_titulo_3
+    margin-right: 0
+  .texto_opcion
+    text-align: left
+  .icono_logo_20
+    max-width: 200px
+  .imagen_niveles
+    left: 0%
+  .niveles_educativos
+    p
+      font-size: 1.5em
