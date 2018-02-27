@@ -50,21 +50,21 @@
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse"  href="#collapseCATEGO">
               <i class="fa fa-fw fa-area-chart"></i>
               <span class="nav-link-text">
-                Categorias ({{$categorias->count()}})</span>
+                Niveles ({{$niveles->count()}})</span>
             </a>
             <ul class="sidenav-second-level collapse" id="collapseCATEGO">
-              @foreach($categorias as $categos)
+              @foreach($niveles as $nivel)
                 <li>
-                  <a href="/categoria/{{$categos->id}}">{{$categos->nombre}} ({{$categos->inmueblis->count()}})</a>
+                  <a href="/categoria/{{$nivel->id}}">{{$nivel->nombre}}</a>
                 </li>
               @endforeach
             </ul>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link" href="{{route('inmueble.index')}}">
+            <a class="nav-link" href="{{route('galeria.index')}}">
               <i class="fa fa-fw fa-wrench"></i>
               <span class="nav-link-text">
-                Inmuebles ({{$inmuebles->count()}})</span>
+                Gaerlia ({{$galerias->count()}})</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">

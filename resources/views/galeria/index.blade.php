@@ -49,7 +49,7 @@
                                 </thead>
 
                                 <tbody>
-                                    @foreach($imagens as $imagen) 
+                                    @foreach($imagenes as $imagen) 
                                     <tr>
                                         <td>
                                             {{$imagen->nivel->nombre}}
@@ -73,7 +73,7 @@
                                                         </form>
                                         </td>
                                         <td>
-                                            <a href="{{ route('imagen.edit', $imagen->id) }}" class = 'viewEdit btn btn-primary btn-xs' data-link = '/subcategoria/{!!$imagen->id!!}/edit'><i class = 'material-icons'>edit</i></a>
+                                            <a href="{{ route('galeria.edit', $imagen->id) }}" class = 'viewEdit btn btn-primary btn-xs' data-link = '/subcategoria/{!!$imagen->id!!}/edit'><i class = 'material-icons'>edit</i></a>
                                         </td>
                                         <td>
                                             <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/subcategoria/{!!$imagen->id!!}'><i class = 'material-icons'>info</i></a>
@@ -84,7 +84,7 @@
                             </table>    
                         </div>    
                     </div>
-                    {!! $imagens->links() !!}
+                    {!! $imagenes->links() !!}
                 </div>
             </div>
         </div>

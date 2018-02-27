@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Galeria;
 use Illuminate\Http\Request;
+use App\Nivel;
+use Image;
 
 class GaleriaController extends Controller
 {
@@ -14,7 +16,9 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        //
+        $title = 'Index - Imagenes';
+        $imagenes = Galeria::paginate(10);
+        return view('galeria.index', compact('imagenes'));
     }
 
     /**
@@ -22,9 +26,11 @@ class GaleriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id, Request $request)
     {
-        //
+        $title = 'Crear Imagen';
+        $nivel = Nivel::findOrfail($id);
+        return view('galeria.create', compact('title', 'nivel'));
     }
 
     /**
@@ -35,7 +41,27 @@ class GaleriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+            $imagen = new Galeria();
+            if ($request->hasFile('imagen')) {
+                $imagen = $request->file('imagen');
+                $filename = time().'.'.$imagen->getClientOriginalExtension();
+                $path = 'img/ima/'.$filename;
+                Image::make($imagen)->resize(null, 400, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->save($path);
+
+                $imagen->imagen = 'img/ima/'.$filename;
+            }
+
+                $imagen->nombre = $request->nombre;
+
+                $imagen->nivel_id = $request->id_nivel;
+
+                $imagen->save();
+
+                return redirect('galeria');
     }
 
     /**
@@ -44,9 +70,17 @@ class GaleriaController extends Controller
      * @param  \App\Galeria  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function show(Galeria $galeria)
+    public function show($id,Request $request)
     {
-        //
+        $title = 'Mostrar Imagenes';
+
+        if($request->ajax())
+        {
+            return URL::to('imagen/'.$id);
+        }
+
+        $imagen = Galeria::findOrfail($id);
+        return view('galeria.show',compact('title','imagen'));
     }
 
     /**
@@ -55,9 +89,11 @@ class GaleriaController extends Controller
      * @param  \App\Galeria  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Galeria $galeria)
+    public function edit($id,Request $request)
     {
-        //
+        $imagen = Galeria::findOrfail($id);
+        $nivel = Nivel::all();
+        return view('galeria.edit',compact('imagen', 'nivel'));
     }
 
     /**
@@ -67,9 +103,29 @@ class GaleriaController extends Controller
      * @param  \App\Galeria  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Galeria $galeria)
+    public function update($id,Request $request)
     {
-        //
+
+            $imagen = new Galeria();
+            if ($request->hasFile('imagen')) {
+                $imagen = $request->file('imagen');
+                $filename = time().'.'.$imagen->getClientOriginalExtension();
+                $path = 'img/ima/'.$filename;
+                Image::make($imagen)->resize(null, 400, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->save($path);
+
+                $imagen->imagen = 'img/ima/'.$filename;
+            }
+
+                $imagen->nombre = $request->nombre;
+
+                $imagen->Nivel_id = $request->id_nivel;
+
+                $imagen->save();
+
+                return redirect('galeria');
     }
 
     /**
@@ -81,5 +137,33 @@ class GaleriaController extends Controller
     public function destroy(Galeria $galeria)
     {
         //
+    }    
+    public function cargarGaleria( Request $request){
+                $this->validate($request, [
+                    'galeria.*' => 'required | image',
+                ],[   
+                    'galeria'    => 'Por favor agrega imagenes.'
+                ]);
+                $photos = $request->file('galeria');
+                if (!empty($photos)) {
+                    foreach ($photos as $indexPhoto=>$photo) {
+                        $nombre = $request->nombreNivel.'_'.$indexPhoto.'_'.$photo->hashName();
+                        $path = 'img/ima/'.$nombre;
+                        $imagenes = new Galeria();
+                        Image::make($photo)->resize(null, 400, function ($constraint) {
+                            $constraint->aspectRatio();
+                            $constraint->upsize();
+                        })->save($path);
+                        $imagenes->Nivel_id = $request->id_nivel;
+                        $imagenes->imagen = $path;
+                        $imagenes->nombre =  $request->nombreNivel.'_'.$indexPhoto.'_'.$photo->hashName();
+                        $imagenes->orden = $indexPhoto;
+                        $imagenes->save();
+                    }
+                }else{
+                    return back()->with('info', 'No se cargaron imagenes :(');
+                }
+
+                return redirect('nivel');
     }
 }

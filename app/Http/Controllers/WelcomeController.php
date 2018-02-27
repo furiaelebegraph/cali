@@ -80,4 +80,8 @@ class WelcomeController extends Controller
     {
         //
     }
+
+    public function nivelesEducativos(){
+        
+    }
 }

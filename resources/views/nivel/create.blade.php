@@ -43,7 +43,7 @@
                         <input type = 'hidden' name = '_token' value = '{{Session::token()}}'>
                         <div class="form-group">
                             <label for="titulo">Nombre</label>
-                            <input id="titulo" name = "nombre" type="text" class="form-control">
+                            <input id="titulo" name = "titulo" type="text" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="imagen">Imagen</label>
