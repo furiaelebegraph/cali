@@ -5,66 +5,59 @@
 <div class="row">
 	<div class="col-12">
 		<div class="titulo_nivel_edu">
-			<h1>{{ $nivel->nombre }}</h1>
+			<h1>{{ $nivel->titulo }}</h1>
 		</div>
 	</div>
 	<div class="col-12">
 		<div class="wrap_video_testi">
-			<div class="video_testi">
-				<video poster='{{ $nivel->poster }}'>
-					<source src="{{ asset('video/'.$nivel->video) }}" type="video/mp4" >
+			<div class="video_testi video_testimonial">
+				<video id='video_1' controls poster='{{ asset($nivel->poster) }}'>
+					<source src="{{ asset($nivel->video) }}" type="video/mp4" >
 				</video>
 			</div>
 			<div class="wrap_datos_testi">
 				<div class="titulo_testi">
-					<h2>{{ $nivel->minitestimonio }}</h2>
+					<h2>{!! $nivel->minitestimonio !!}</h2>
 				</div>
 				<div class="texto_testi">
-					<p> {{$nivel->testimonio }} </p>
+					<p> {!!$nivel->testimonio !!} </p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="col-12">
 		<div class="icono_nivel">
-			<img src="{{ asset( 'img/'.$nivel->icono ) }}" alt="">
+			<img src="{{ asset($nivel->icono) }}" alt="">
 		</div>
 	</div>
 	<div class="col-12">
 		<div class="descrip_nivel">
-			<h2> {{ $nivel->nombre }} </h2>
-			<p> {{$nivel->descripcion}} </p>
+			<h2> {{ $nivel->titulo }} </h2>
+			<p> {!!$nivel->descripcion!!} </p>
 		</div>
 	</div>
 	<div class="col-12">
-		<div class="galeria">
-			
-			<div id="myCarousel" class="carousel slide">
-                    <!-- main slider carousel items -->
-                    <div class="carousel-inner">
-                    	@foreach($nivel->galeria as $key=>$imagenes)
-							<a data-fancybox="gallery" class='item carousel-item' data-slide-number="{{$key}}" href="{{asset($imagenes->imagen)}}">
-								<img src="{{asset($nivel->imagen)}}" alt="">
-							</a>
-						@endforeach
-
-                        <a class="carousel-control left pt-3" href="#myCarousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                        <a class="carousel-control right pt-3" href="#myCarousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
-
-                    </div>
-                    <!-- main slider carousel nav controls -->
-
-
-                    <ul class="carousel-indicators list-inline m-t-60">
-                    	@foreach($nivel->galeria as $key=>$imagenes)
-							<li class='list-inline-item'  data-slide-to="{{$key}}" data-target="#myCarousel" ">
-								<a id="carousel-selector-{{$key}}" class="selected" data-slide-to="{{$key}}" data-target="#myCarousel">
-	                                <img src="{{asset($imagenes->imagen)}}" class="img-fluid">
-	                            </a>
-							</li>
-						@endforeach
-                    </ul>
-            </div>
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+			  	@foreach($nivel->galeria as $key=>$imagenes)
+			  		<li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}"></li>
+			  	@endforeach
+			</ol>
+			<div class="carousel-inner">
+			  	@foreach($nivel->galeria as $key=>$imagenes)
+				  	<div class="carousel-item">
+						<img class="d-block w-100" src="{{asset($imagenes->imagen)}}" alt="">	    
+				  	</div>
+			  	@endforeach
+			</div>
+				 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				</a>
 		</div>
 	</div>
 </div>

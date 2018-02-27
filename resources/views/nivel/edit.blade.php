@@ -28,19 +28,19 @@
                     <form method = 'POST' action = '{!! url("nivel")!!}/{!!$nivel->id!!}/update' enctype="multipart/form-data"> 
                         <input type = 'hidden' name = '_token' value = '{{Session::token()}}'>
                         <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input id="nombre" name = "nombre" type="text" class="form-control" value="{!!$nivel->nombre!!}">
+                            <label for="titulo">Nombre</label>
+                            <input id="titulo" name = "titulo" type="text" class="form-control" value="{{$nivel->titulo}}">
                         </div>
                         <div class="form-group">
                             <label for="imagen">imagen</label>
                             <img src="{!! asset($nivel->imagen)!!}" alt="">
-                            <input id="imagen" name = "imagen" type="file" class="form-control" value="{!!$nivel->imagen!!}"> 
+                            <input id="imagen" name = "imagen" type="file" class="form-control" value="{{$nivel->imagen}}"> 
                         </div>
 
                         <div class="form-group">
                             <label for="icono">Icono</label>
-                            <img src="{!! asset($nivel->icono)!!}" alt="">
-                            <input id="icono" name = "icono" type="file" class="form-control" value="{!!$nivel->icono!!}"> 
+                            <img src="{{ asset($nivel->icono)}}" alt="">
+                            <input id="icono" name = "icono" type="file" class="form-control" value="{{$nivel->icono}}"> 
                         </div>
                         <div class="form-group">
                             <label for="imagen">Video</label>
@@ -51,20 +51,20 @@
                         </div>
                         <div class="form-group">
                             <label for="testimonio">Testimonio </label>
-                            <textarea rows="10"  id="testimonio" name = "testimonio" type="text" class="form-control" value="{!!$nivel->testimonio!!}"></textarea>
+                            <textarea rows="10"  id="testimonio" name = "testimonio" type="text" class="form-control" value="{{$nivel->testimonio}}"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="brevetesti">Testimonio Corto </label>
-                            <textarea rows="10"  id="brevetesti" name = "brevetesti" type="text" class="form-control" value="{!!$nivel->minitestimonio!!}"></textarea>
+                            <textarea rows="10"  id="brevetesti" name = "brevetesti" type="text" class="form-control" value="{{$nivel->minitestimonio}}"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripcion Nivel</label>
-                            <textarea rows="10"  id="descripcion" name = "descripcion" type="text" class="form-control" value="{!!$nivel->descripcion!!}"></textarea>
+                            <textarea rows="10"  id="descripcion" name = "descripcion" type="text" class="form-control" value="{{$nivel->descripcion}}"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="orden">Orden</label>
-                            <input id="orden" name = "orden" type="text" class="form-control" value="{!!$nivel->orden!!}"> 
+                            <label for="orden">orden</label>
+                            <input id="orden" name = "orden" type="text" class="form-control" value="{{$nivel->orden}}"> 
                         </div>
                         <div class="form-group">
                             <label for="orden">Activo</label>

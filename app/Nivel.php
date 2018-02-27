@@ -11,6 +11,6 @@ class Nivel extends Model
     }
     protected $table = 'nivel';
     protected $fillable = [
-        'titulo','imagen', 'video', 'icono', 'descripcion', 'testimonio', 'minitestimonio'
+        'titulo','imagen', 'video', 'icono', 'orden', 'descripcion', 'testimonio', 'minitestimonio'
     ];
 }

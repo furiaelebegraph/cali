@@ -18,9 +18,9 @@ class NivelController extends Controller
     {
         $title = 'Index - Producto';
         $albums = Nivel::with('galeria')->get();
-        $niveles = Nivel::paginate(10);
+        $potatos = Nivel::paginate(10);
         $imagenes = Galeria::all();
-        return view('nivel.index', compact('albums', 'niveles','imagenes'));
+        return view('nivel.index', compact('potatos','imagenes','albums'));
     }
 
     /**
@@ -43,7 +43,7 @@ class NivelController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'titulo' => 'required|unique:nivel|max:255',
+            'titulo' => 'required|max:255',
             'imagen' => 'required | image | max:2000',
         ]);
             $nivel = new Nivel();
@@ -62,23 +62,39 @@ class NivelController extends Controller
 
                 $file = $request->file('video');
                 $filename = time().'.'.$file->getClientOriginalExtension();
-                $path = 'videos/';
+                $path = 'video/';
                 $union = $path.$filename;
                 $nivel->video = $union;
                 $file->move($path, $filename);
             }
+            if($request->hasFile('icono')){
+
+                $file = $request->file('icono');
+                $filename = time().'.'.$file->getClientOriginalExtension();
+                $path = 'img/icono/';
+                $union = $path.$filename;
+                $nivel->icono = $union;
+                $file->move($path, $filename);
+            }
+            if($request->hasFile('icono')){
+
+                $file = $request->file('poster');
+                $filename = time().'.'.$file->getClientOriginalExtension();
+                $path = 'img/poster/';
+                $union = $path.$filename;
+                $nivel->poster = $union;
+                $file->move($path, $filename);
+            }
                 $nivel->titulo = $request->titulo;
-                $nivel->icono = $request->icono;
-                $nivel->poster = $request->poster;
                 $nivel->descripcion = $request->descripcion;
                 $nivel->testimonio = $request->testimonio;
                 $nivel->minitestimonio = $request->brevetesti;
+                $nivel->orden = $request->orden;
                 $nivel->save();
                 $photos = $request->file('photos');
                 if (!empty($photos)) {
                     foreach ($photos as $indexPhoto=>$photo) {
-                        $nombre = $nivel->nombre.'_'.$indexPhoto.'_'.$photo->hashName();
-                        $path = 'img/imagenes/'.$nombre;
+                        $path = 'img/ima/'.time().'.'.$photo->getClientOriginalExtension();
                         $imagenes = new Galeria();
                         Image::make($photo)->resize(null, 800, function ($constraint) {
                             $constraint->aspectRatio();
@@ -86,7 +102,6 @@ class NivelController extends Controller
                         })->save($path);
                         $imagenes->nivel_id = $nivel->id;
                         $imagenes->imagen = $path;
-                        $imagenes->nombre =  $nivel->nombre.'_'.$indexPhoto.'_'.$photo->hashName();
                         $imagenes->orden = $indexPhoto;
                         $imagenes->save();
                     }
@@ -140,12 +155,39 @@ class NivelController extends Controller
 
                 $nivel->imagen = 'img/nivel/'.$filename;
             }
+            if($request->hasFile('icono')){
 
-                $nivel->nombre = $request->nombre;
-                $nivel->subcate_id = $request->id_subcategoria;
-                $nivel->cate_id = $request->id_categoria;
-                $nivel->descripcion = $request->descrip;
+                $file = $request->file('icono');
+                $filename = time().'.'.$file->getClientOriginalExtension();
+                $path = 'img/icono/';
+                $union = $path.$filename;
+                $nivel->icono = $union;
+                $file->move($path, $filename);
+            }
+            if($request->hasFile('icono')){
+
+                $file = $request->file('poster');
+                $filename = time().'.'.$file->getClientOriginalExtension();
+                $path = 'img/poster/';
+                $union = $path.$filename;
+                $nivel->poster = $union;
+                $file->move($path, $filename);
+            }
+            if($request->hasFile('video')){
+
+                $file = $request->file('video');
+                $filename = time().'.'.$file->getClientOriginalExtension();
+                $path = 'video/';
+                $union = $path.$filename;
+                $nivel->video = $union;
+                $file->move($path, $filename);
+            }
+
+                $nivel->titulo = $request->titulo;
+                $nivel->descripcion = $request->descripcion;
+                $nivel->testimonio = $request->testimonio;
                 $nivel->orden = $request->orden;
+                $nivel->minitestimonio = $request->brevetesti;
                 $nivel->save();
 
                 return redirect('nivel');
@@ -157,9 +199,11 @@ class NivelController extends Controller
      * @param  \App\Nivel  $nivel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Nivel $nivel)
+    public function destroy($id,Request $request)
     {
-        //
+        $nivel = Nivel::findOrfail($id);
+        $nivel->delete();
+         return redirect('nivel');
     }
     public function nivelEducativo($id,Request $request){
         $title = 'Index - Producto';

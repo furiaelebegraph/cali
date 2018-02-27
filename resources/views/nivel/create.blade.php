@@ -58,8 +58,8 @@
                             <input id="poster" name = "poster" type="file" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="orden">Orden</label>
-                            <input id="orden" name = "orden" type="number" class="form-control">
+                            <label for="orden">Subir Galeria</label>
+                            <input id="photos" type="file" name="photos[]" multiple class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -80,6 +80,10 @@
                             <textarea rows="10"  id="descripcion" name = "descripcion" type="text" class="form-control"></textarea>
                         </div>
 
+                        <div class="form-group">
+                            <label for="orden">orden</label>
+                            <input id="orden" name = "orden" type="text" class="form-control"> 
+                        </div>
                         <div class="form-group">
                             <label for="orden">Activo</label>
                             <select class="form-control" name="activo">

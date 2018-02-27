@@ -55,8 +55,6 @@ class GaleriaController extends Controller
                 $imagen->imagen = 'img/ima/'.$filename;
             }
 
-                $imagen->nombre = $request->nombre;
-
                 $imagen->nivel_id = $request->id_nivel;
 
                 $imagen->save();
@@ -119,8 +117,6 @@ class GaleriaController extends Controller
                 $imagen->imagen = 'img/ima/'.$filename;
             }
 
-                $imagen->nombre = $request->nombre;
-
                 $imagen->Nivel_id = $request->id_nivel;
 
                 $imagen->save();
@@ -156,7 +152,6 @@ class GaleriaController extends Controller
                         })->save($path);
                         $imagenes->Nivel_id = $request->id_nivel;
                         $imagenes->imagen = $path;
-                        $imagenes->nombre =  $request->nombreNivel.'_'.$indexPhoto.'_'.$photo->hashName();
                         $imagenes->orden = $indexPhoto;
                         $imagenes->save();
                     }

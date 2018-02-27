@@ -18,3 +18,5 @@ iconito.onclick = function(){
 	menu_mobil.classList.toggle("mostrar_menu")
 
 };
+$('.carousel-indicators li:first').addClass('active');
+$('.carousel-item:first').addClass('active');

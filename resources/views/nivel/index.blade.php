@@ -52,7 +52,7 @@
                                 </thead>
 
                                 <tbody>
-                                    @foreach($niveles as $nivel) 
+                                    @foreach($potatos as $nivel) 
                                     <tr>
                                         <td>{!!$nivel->nombre!!}</td>
                                         <td> 
@@ -94,7 +94,7 @@
                             </table>    
                         </div>    
                     </div>
-                    {!! $niveles->links() !!}
+                    {!! $potatos->links() !!}
                 </div>
 
             </div>
