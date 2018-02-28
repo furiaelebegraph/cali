@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-12">
-		<div class="titulo_nivel_edu">
+		<div class="titulo_nivel_edu m-t-70  m-b-50">
 			<h1>{{ $nivel->titulo }}</h1>
 		</div>
 	</div>
@@ -33,7 +33,10 @@
 	<div class="col-12">
 		<div class="descrip_nivel">
 			<h2> {{ $nivel->titulo }} </h2>
-			<p> {!!$nivel->descripcion!!} </p>
+			<div class="wrap_descripcion">
+				{!!$nivel->descripcion!!}
+				
+			</div>
 		</div>
 	</div>
 	<div class="col-12">
