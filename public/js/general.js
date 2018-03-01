@@ -1,4 +1,6 @@
 
+$('.niveles_educativos');
+
 let clickVideo = document.querySelector('.video_testimonial');
 let videoTesti = document.getElementById('video_1');
 
