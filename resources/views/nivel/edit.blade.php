@@ -25,7 +25,7 @@
                         <button class = 'btn btn-danger'>Ver nivels</button>
                     </form>
                     <br>
-                    <form method = 'POST' action = '{!! url("nivel")!!}/{!!$nivel->id!!}/update' enctype="multipart/form-data"> 
+                    <form method = 'POST' action = '{!! url("nivel")!!}/{!!$nivel->id!!}/update' enctype="multipart/form-data" > 
                         <input type = 'hidden' name = '_token' value = '{{Session::token()}}'>
                         <div class="form-group">
                             <label for="titulo">Nombre</label>
@@ -50,29 +50,33 @@
                             <input id="video" name = "video" type="file" class="form-control" value="{!!$nivel->video!!}"> 
                         </div>
                         <div class="form-group">
+                            <label for="videomobil">Video Mobiles</label>
+                            <video controls >
+                                <source src="src="{!! asset($nivel->videomobil)!!}" type="video/mp4"></source>
+                            </video>
+                            <input id="videomobil" name = "videomobil" type="file" class="form-control" value="{{ $nivel->videomobil}}"> 
+                        </div>
+                        <div class="form-group">
                             <label for="testimonio">Testimonio </label>
-                            <textarea rows="10"  id="testimonio" name = "testimonio" type="text" class="form-control" value="{{$nivel->testimonio}}"></textarea>
+                            <textarea rows="10"  id="testimonio" name = "testimonio" type="text" class="form-control" >{{$nivel->testimonio}}</textarea>
                         </div>
 
                         <div class="form-group">
+                            <label for="poster">Poster Video</label>
+                            <img src="{{ asset($nivel->poster)}}" alt="">
+                            <input id="poster" name="poster" type="file" class="form-control" value="{{ asset($nivel->poster)}}">
+                        </div>
+                        <div class="form-group">
                             <label for="brevetesti">Testimonio Corto </label>
-                            <textarea rows="10"  id="brevetesti" name = "brevetesti" type="text" class="form-control" value="{{$nivel->minitestimonio}}"></textarea>
+                            <input id="brevetesti" name = "brevetesti" type="text" class="form-control" value="{{$nivel->minitestimonio}}">
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripcion Nivel</label>
-                            <textarea rows="10"  id="descripcion" name = "descripcion" type="text" class="form-control" value="{{$nivel->descripcion}}"></textarea>
+                            <textarea rows="10"  id="descripcion" name = "descripcion" type="text" class="form-control"> {{$nivel->descripcion}} </textarea>
                         </div>
                         <div class="form-group">
                             <label for="orden">orden</label>
                             <input id="orden" name = "orden" type="text" class="form-control" value="{{$nivel->orden}}"> 
-                        </div>
-                        <div class="form-group">
-                            <label for="orden">Activo</label>
-                            <select  class="form-control" name="activo">
-                                <option selected="selected" value="{{$nivel->activo}}">{{$nivel->activo}}</option>
-                                <option value="si">Si</option>
-                                <option value="no">No</option>
-                            </select>
                         </div>
                         <button class = 'btn btn-primary' type ='submit'>Update</button>
                     </form>

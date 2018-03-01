@@ -3,13 +3,13 @@ $gris: #5c5f60
 
 @import '_font-helper'
 @import '_helpers'
-@import '_niveles_educa'
 
 @include declare-font-face('avenir', 'Avenir-Book', 'regular')
 @include declare-font-face('avenirIt', 'Avenir-BookOblique', 'regular')
 @include declare-font-face('avenirBold', 'Avenir-Black', 'bold')
 @include declare-font-face('avenirBoldIt', 'Avenir-BlackOblique', 'bold' )
 
+@import '_niveles_educa'
 
 *
   font-family: avenir
@@ -310,7 +310,7 @@ p
 .imagen_niveles
   position: relative
   left: -22%
-
+  max-width: 227px
 
 .btn_menu_mobil
   vertical-align: middle
@@ -346,6 +346,8 @@ p
 #myCarousel .carousel-indicators > li.active img 
   opacity: 0.7
 
+.footer_izq, .footer_der
+  text-align: center
 
 @media (min-width:600px)
   .escritorio
@@ -383,3 +385,14 @@ p
   .niveles_educativos
     p
       font-size: 1.5em
+  .icono_nivel
+    margin: -56px auto
+    left: 0
+    transform: translate(0, 0)
+  .titulo_nivel_edu
+    text-align: center
+    font-size: 30px
+  .footer_izq
+    text-align: left
+  .footer_der
+    text-align: right

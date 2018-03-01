@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Nivel;
 
 class WelcomeController extends Controller
 {
@@ -12,7 +13,8 @@ class WelcomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-       return view('welcome');
+        $niveles = Nivel::with('galeria')->get();
+        return view('welcome', compact('niveles'));
     }
 
     /**

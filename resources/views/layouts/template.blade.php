@@ -57,7 +57,7 @@
                 <div class="escritorio nav_mobil_cali">
                   <div class="row justify-content-between sombra_nav">
                     <div class="col-4 p-l-10">
-                      <img class='icono_logo_20' src="{{ asset('img/logo_cali_20.png') }}" alt="">
+                      <a href="{{ url('/') }}"><img class='icono_logo_20' src="{{ asset('img/logo_cali_20.png') }}" alt=""></a>
                     </div>
                     <div class="col-8 d-flex justify-content-end align-items-center  p-r-10">
                       <div>
@@ -96,7 +96,7 @@
                       </div>
                     </div>
                     <div class="col">
-                      <img class='icono_logo_20' src="{{ asset('img/logo_cali_20.png') }}" alt="">
+                      <a href="{{ url('/') }}"><img class='icono_logo_20' src="{{ asset('img/logo_cali_20.png') }}" alt=""></a>
                     </div>
                     <div class="col">
                       <div class="sociales_footer">
@@ -170,10 +170,10 @@
               <div class="col-12">
                 <div class="back_naranja p-t-20 p-b-20">
                   <div class="row">
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-6 footer_der">
                       Colegio Cali © {{ date("Y") }}.
                     </div>
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-6 footer_izq">
                       Todos los derechos reservados.
                     </div>
                   </div>

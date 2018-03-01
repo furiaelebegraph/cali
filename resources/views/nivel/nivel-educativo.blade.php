@@ -9,10 +9,25 @@
 		</div>
 	</div>
 	<div class="col-12">
-		<div class="wrap_video_testi">
+		<div class="wrap_video_testi escritorio">
 			<div class="video_testi video_testimonial">
 				<video id='video_1' controls poster='{{ asset($nivel->poster) }}'>
 					<source src="{{ asset($nivel->video) }}" type="video/mp4" >
+				</video>
+			</div>
+			<div class="wrap_datos_testi">
+				<div class="titulo_testi">
+					<h2>{!! $nivel->minitestimonio !!}</h2>
+				</div>
+				<div class="texto_testi">
+					<p> {!!$nivel->testimonio !!} </p>
+				</div>
+			</div>
+		</div>
+		<div class="wrap_video_testi mobil">
+			<div class="video_testi video_testimonial">
+				<video id='video_1' controls }}'>
+					<source src="{{ asset($nivel->videomobil) }}" type="video/mp4" >
 				</video>
 			</div>
 			<div class="wrap_datos_testi">
@@ -31,6 +46,9 @@
 		</div>
 	</div>
 	<div class="col-12">
+		<div class="wrap_tringulito">
+			<img class='trigulito' src="{{ asset('img/triangulito.svg') }}" alt="">
+		</div>
 		<div class="descrip_nivel">
 			<h2> {{ $nivel->titulo }} </h2>
 			<div class="wrap_descripcion">

@@ -49,7 +49,7 @@ class NivelController extends Controller
             $nivel = new Nivel();
             if ($request->hasFile('imagen')) {
                 $imagen = $request->file('imagen');
-                $filename = time().'.'.$imagen->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName().time().'.'.$imagen->getClientOriginalExtension();
                 $path = 'img/nivel/'.$filename;
                 Image::make($imagen)->resize(null, 800, function ($constraint) {
                     $constraint->aspectRatio();
@@ -61,25 +61,34 @@ class NivelController extends Controller
             if($request->hasFile('video')){
 
                 $file = $request->file('video');
-                $filename = time().'.'.$file->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName().time().'.'.$file->getClientOriginalExtension();
                 $path = 'video/';
                 $union = $path.$filename;
                 $nivel->video = $union;
                 $file->move($path, $filename);
             }
+            if($request->hasFile('videomobil')){
+
+                $file = $request->file('videomobil');
+                $filename = $file->getClientOriginalName().time().'.'.$file->getClientOriginalExtension();
+                $path = 'videomobil/';
+                $union = $path.$filename;
+                $nivel->videomobil = $union;
+                $file->move($path, $filename);
+            }
             if($request->hasFile('icono')){
 
                 $file = $request->file('icono');
-                $filename = time().'.'.$file->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName().time().'.'.$file->getClientOriginalExtension();
                 $path = 'img/icono/';
                 $union = $path.$filename;
                 $nivel->icono = $union;
                 $file->move($path, $filename);
             }
-            if($request->hasFile('icono')){
+            if($request->hasFile('poster')){
 
                 $file = $request->file('poster');
-                $filename = time().'.'.$file->getClientOriginalExtension();
+                $filename = $file->getClientOriginalName().time().'.'.$file->getClientOriginalExtension();
                 $path = 'img/poster/';
                 $union = $path.$filename;
                 $nivel->poster = $union;
@@ -94,7 +103,7 @@ class NivelController extends Controller
                 $photos = $request->file('photos');
                 if (!empty($photos)) {
                     foreach ($photos as $indexPhoto=>$photo) {
-                        $path = 'img/ima/'.time().'.'.$photo->getClientOriginalExtension();
+                        $path = 'img/ima/'.$photo->getClientOriginalName().time().'.'.$photo->getClientOriginalExtension();
                         $imagenes = new Galeria();
                         Image::make($photo)->resize(null, 800, function ($constraint) {
                             $constraint->aspectRatio();
@@ -164,7 +173,16 @@ class NivelController extends Controller
                 $nivel->icono = $union;
                 $file->move($path, $filename);
             }
-            if($request->hasFile('icono')){
+            if($request->hasFile('videomobil')){
+
+                $file = $request->file('videomobil');
+                $filename = time().'.'.$file->getClientOriginalExtension();
+                $path = 'videomobil/';
+                $union = $path.$filename;
+                $nivel->videomobil = $union;
+                $file->move($path, $filename);
+            }
+            if($request->hasFile('poster')){
 
                 $file = $request->file('poster');
                 $filename = time().'.'.$file->getClientOriginalExtension();

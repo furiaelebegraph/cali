@@ -34,6 +34,29 @@
     <div class="col-12">
       <div class="centro_800">
         <div class="row justify-content-center">
+          @foreach ($niveles as $nivel)
+            <div class="col-12 col-md-4">
+              <div class="niveles_educativos">
+                <div class="row align-items-center justify-content-center">
+                  <div class="col-6 col-sm-4 col-md-12">
+                    <a href="{{ url('nivel-educativo/'.$nivel->id) }}">
+                      <img class='imagen_niveles' src="{{ asset($nivel->imagen) }}" alt="">
+                    </a>
+                    
+                  </div>
+                  <div class="col-6 col-sm-4 col-md-12">
+                    <a href="{{ url('nivel-educativo/'.$nivel->id) }}">
+                      <p>
+                        {{$nivel->titulo}}
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+          @endforeach
           <div class="col-12 col-md-4">
             <div class="niveles_educativos">
               <div class="row align-items-center justify-content-center">

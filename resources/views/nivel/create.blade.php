@@ -61,19 +61,21 @@
                             <label for="orden">Subir Galeria</label>
                             <input id="photos" type="file" name="photos[]" multiple class="form-control">
                         </div>
-
                         <div class="form-group">
-                            <label for="imagen">Video</label>
+                            <label for="video">Video</label>
                             <input id="video" name = "video" type="file" class="form-control"> 
+                        </div>
+                        <div class="form-group">
+                            <label for="videomobil">Video Mobiles</label>
+                            <input id="videomobil" name = "videomobil" type="file" class="form-control"> 
+                        </div>
+                        <div class="form-group">
+                            <label for="brevetesti">Titulo testimonio </label>
+                            <input id="brevetesti" name = "brevetesti" type="text" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="testimonio">Testimonio </label>
                             <textarea rows="10"  id="testimonio" name = "testimonio" type="text" class="form-control" ></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="brevetesti">Testimonio Corto </label>
-                            <textarea rows="10"  id="brevetesti" name = "brevetesti" type="text" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripcion Nivel</label>
@@ -83,13 +85,6 @@
                         <div class="form-group">
                             <label for="orden">orden</label>
                             <input id="orden" name = "orden" type="text" class="form-control"> 
-                        </div>
-                        <div class="form-group">
-                            <label for="orden">Activo</label>
-                            <select class="form-control" name="activo">
-                                <option selected="selected"  value="si">Si</option>
-                                <option value="no">No</option>
-                            </select>
                         </div>
                         <div class="sub-main_crear">
                           <button class="button-two_crear" type = 'submit'><span class="texto_blanco">Crear</span></button>
