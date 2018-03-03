@@ -17,6 +17,9 @@ class AdminisComposerProvider extends ServiceProvider
         view()->composer('layouts.admin', function($view){
             $view->with('niveles', Nivel::all());
         });
+        view()->composer('layouts.template', function($view){
+            $view->with('niveles', Nivel::all());
+        });
         view()->composer('layouts.admin', function($view){
             $view->with('galerias', Galeria::all());
         });

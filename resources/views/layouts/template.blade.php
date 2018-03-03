@@ -17,6 +17,7 @@
 
     </head>
     <body>
+
       <div class="menu_mobil sombra_nav">
         <div class="alto_menu_mobil alineado_centro">
           <div class="row no-gutters mh-100 alineado_centro">
@@ -66,8 +67,13 @@
                       <div>
                         <a class='btn_menu_escri' href="{{ url('nosotros') }}">NOSOTROS</a>
                       </div>
-                      <div>
-                        <a class='btn_menu_escri' href="{{ url('niveles-educativos') }}">NIVELES EDUCATIVOS</a>
+                      <div  id="dropdownMenuButton">
+                        <a class='btn_menu_escri' href="#">NIVELES EDUCATIVOS</a>
+                          <div class="dropdown-content" >
+                            @foreach ($niveles as $nivel)
+                              <a href="{{ url('nivel-educativo')}}/{{$nivel->id}}">{{$nivel->titulo}}</a>
+                            @endforeach
+                          </div>
                       </div>
                       <div>
                         <a class='btn_menu_escri' href="{{ url('instalaciones') }}">INSTALACIONES</a>
@@ -187,6 +193,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="{{ asset('js/wow.min.js') }} "></script>
         <script src="{{ asset('js/jquery.fancybox.min.js') }} "></script>
+        <script src="{{ asset('js/anime.js') }}"></script>
+        <script src="{{ asset('js/animaciones.js') }}"></script>
         <script src="{{ asset('js/general.js') }}"></script>
     </body>
 </html>
