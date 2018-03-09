@@ -2,84 +2,46 @@
 
 @section('content')
 
-<div class="row">
-	<div class="col-12">
-		<div class="titulo_nivel_edu m-t-70  m-b-50">
-			<h1>{{ $nivel->titulo }}</h1>
+<div class="row justify-content-center align-items-center">
+	<div class="col-12 alineado_centro wow bounceInUp">
+		<div class="titulo_acerca m-t-90 m-b-50">
+			<h1><span>Acerca</span> de Cali</h1>
 		</div>
 	</div>
 	<div class="col-12">
-		<div class="wrap_video_testi escritorio">
-			<div class="video_testi video_testimonial">
-				<video id='video_1' controls poster='{{ asset($nivel->poster) }}'>
-					<source src="{{ asset($nivel->video) }}" type="video/mp4" >
-				</video>
-			</div>
-			<div class="wrap_datos_testi">
-				<div class="titulo_testi">
-					<h2>{!! $nivel->minitestimonio !!}</h2>
-				</div>
-				<div class="texto_testi">
-					<p> {!!$nivel->testimonio !!} </p>
-				</div>
-			</div>
+		<div class="texto_asi_apredemos">
+			<h3>Así aprendemos en Cali</h3>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque eros nec nunc pharetra rutrum. Aenean ut sem gravida, elementum nibh ut, varius erat. Proin aliquet bibendum leo eget tincidunt. Morbi ac dictum quam. Aenean eu rutrum erat. Cras elementum urna urna, eu sodales eros commodo et. Mauris iaculis, nunc quis iaculis rhoncus, nulla elit aliquam augue, id gravida massa ante non erat. Suspendisse sit amet aliquet lacus. Sed eleifend diam vitae lectus bibendum malesuada vitae id urna.
+			</p>
 		</div>
-		<div class="wrap_video_testi mobil">
-			<div class="video_testi video_testimonial">
-				<video id='video_1' controls }}'>
-					<source src="{{ asset($nivel->videomobil) }}" type="video/mp4" >
-				</video>
+	</div>
+	<div class="col-12 m-t-80 m-b-80">
+		<div class="row justify-content-center align-items-center no-gutters">
+			<div class="col-11 col-sm-6 wow slideInLeft">
+				<img class='w-100' src="{{ asset('img/fachada_colegio_cali.jpg') }}" alt="">
 			</div>
-			<div class="wrap_datos_testi">
-				<div class="titulo_testi">
-					<h2>{!! $nivel->minitestimonio !!}</h2>
-				</div>
-				<div class="texto_testi">
-					<p> {!!$nivel->testimonio !!} </p>
-				</div>
+			<div class="col-11 col-sm-6 wow slideInRight">
+				<img class='w-100' src="{{ asset('img/secundaria_cali_1.jpg') }}" alt="">
 			</div>
 		</div>
 	</div>
-	<div class="col-12">
-		<div class="icono_nivel">
-			<img src="{{ asset($nivel->icono) }}" alt="">
+	<div class="col-12 alineado_centro">
+		<div class="titulo_acerca m-t-70  m-b-50">
+			<h1><span>Proyecto</span> Cali</h1>
 		</div>
 	</div>
 	<div class="col-12">
-		<div class="wrap_tringulito">
-			<img class='trigulito' src="{{ asset('img/triangulito.svg') }}" alt="">
-		</div>
-		<div class="descrip_nivel">
-			<h2> {{ $nivel->titulo }} </h2>
-			<div class="wrap_descripcion">
-				{!!$nivel->descripcion!!}
-				
-			</div>
+		<div class="texto_asi_apredemos">
+			<h3>Como comenzamos</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque eros nec nunc pharetra rutrum. Aenean ut sem gravida, elementum nibh ut, varius erat. Proin aliquet bibendum leo eget tincidunt. Morbi ac dictum quam. Aenean eu rutrum erat. Cras elementum urna urna, eu sodales eros commodo et. Mauris iaculis, nunc quis iaculis rhoncus, nulla elit aliquam augue, id gravida massa ante non erat. Suspendisse sit amet aliquet lacus. Sed eleifend diam vitae lectus bibendum malesuada vitae id urna.
+			</p>
 		</div>
 	</div>
-	<div class="col-12">
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-			  	@foreach($nivel->galeria as $key=>$imagenes)
-			  		<li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}"></li>
-			  	@endforeach
-			</ol>
-			<div class="carousel-inner">
-			  	@foreach($nivel->galeria as $key=>$imagenes)
-				  	<div class="carousel-item">
-						<img class="d-block w-100" src="{{asset($imagenes->imagen)}}" alt="">	    
-				  	</div>
-			  	@endforeach
-			</div>
-				 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-				</a>
-		</div>
+	<div class="col-12 m-t-80 m-b-80 wow slideInLeft">
+		<img class='w-100' src="{{ asset('img/secundaria_cali_2.jpg') }}" alt="">
 	</div>
 </div>
 

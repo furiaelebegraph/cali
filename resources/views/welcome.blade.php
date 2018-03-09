@@ -4,8 +4,11 @@
   
   <!-- Galeria Inicio -->
   <div class="galeria_landing escritorio">
+    <div class='descubre_cali'>
+      <img src="{{ asset('img/descubre_cali.png') }}" alt="">
+    </div>
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="4000">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="3500">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
@@ -18,7 +21,7 @@
             <img class="d-block w-100" data-src="{{ asset('img/fondo_1.jpg') }}" alt="First slide [800x400]" src="{{ asset('img/fondo_1.jpg') }}" data-holder-rendered="true">
             <div class="carousel-caption d-none d-md-block">
 
-              <div class="svg_imagen svg_imagen_1">
+              <div class="svg_imagen svg_imagen_1 wow zoomIn">
                 <svg class='iconos_inicio_1' id="foco_1" viewBox="0 0 445 413" >
                 <g class="lines">
                   <path class="st0 foco" d="M158.4,143.5c-50.7,25.5-72,86.2-47.3,135.3c16,31.9,38.5,44.3,55,53.5c10.2,5.6,16.1,9.1,18.7,14.2
@@ -62,7 +65,7 @@
           <div class="carousel-item" id='test'>
             <img class="d-block w-100" data-src="{{ asset('img/fondo_2.jpg') }}" alt="First slide [800x400]" src="{{ asset('img/fondo_2.jpg') }}" data-holder-rendered="true">
             <div class="carousel-caption d-none d-md-block">
-              <div class="svg_imagen svg_imagen_2">
+              <div class="svg_imagen svg_imagen_2  wow zoomIn">
                 <svg class='iconos_inicio_2' id="lupita_1" viewBox="0 0 445 413">
                 <g class="lines">
 
@@ -86,7 +89,7 @@
           <div class="carousel-item">
             <img class="d-block w-100" data-src="{{ asset('img/fondo_3.jpg') }}" alt="Third slide [800x400]" src="{{ asset('img/fondo_3.jpg') }}" data-holder-rendered="true">
             <div class="carousel-caption d-none d-md-block">
-              <div class="svg_imagen svg_imagen_1">
+              <div class="svg_imagen svg_imagen_1 wow zoomIn">
                 <svg class='iconos_inicio_3' id="microscopio_1"  viewBox="0 0 137 191" >
                 <g class='lines'>
                   <path class="st3" d="M63.4,143.6H50.6c-0.1,0.2-0.1,0.3-0.2,0.5c2.1,1.2,4.1,2.4,6.2,3.5c0.5,0.3,1.1,0.5,1.7,0.7
@@ -122,7 +125,7 @@
                 </svg>
                 
               </div>
-              <h2>Third slide label</h2>
+              <h2>ANALIZAMOS</h2>
               <p>la información obtenida para</p>
               <p>ir en búsqueda de la solución.</p>
             </div>
@@ -130,7 +133,7 @@
           <div class="carousel-item">
             <img class="d-block w-100" data-src="{{ asset('img/fondo_4.jpg') }}" alt="Third slide [800x400]" src="{{ asset('img/fondo_4.jpg') }}" data-holder-rendered="true">
             <div class="carousel-caption d-none d-md-block">
-              <div class="svg_imagen svg_imagen_1">
+              <div class="svg_imagen svg_imagen_1 wow zoomIn">
                 <svg class='iconos_inicio_3' id="librito"  viewBox="0 0 137 191" >
                 <g class='lines'>
                   <path class="st4" d="M51.9,0h1c0.3,0.2,0.7,0.4,1.1,0.5C73.7,5,93.5,9.5,113.3,14c5.8,1.3,7,4.6,3.1,9.2
@@ -149,15 +152,16 @@
                 </svg>
                 
               </div>
-              <h2>Third slide label</h2>
-              <p>la información obtenida para</p>
-              <p>ir en búsqueda de la solución.</p>
+              <p>Conocimiento</p>
+              <h2>Adquirimos el</h2>
+              <p>por medio de soluciones prácticas</p>
+              <p>a través de diferentes disciplinas</p>
             </div>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" data-src="{{ asset('img/fondo_5.jpg') }}" alt="Third slide [800x400]" src="{{ asset('img/fondo_5.jpg') }}" data-holder-rendered="true">
             <div class="carousel-caption d-none d-md-block">
-              <div class="svg_imagen_1">
+              <div class="svg_imagen_1 wow zoomIn">
                 <svg class='iconos_inicio_3' id="manitas"  viewBox="0 0 137 191" >
                 <g class='lines'>
                   <path class="st6" d="M61.8,98.7l-1.7-2.2c0,0,0,0,0,0L54.7,91c-0.8-0.7-1.5-1.5-2.2-2.3L48.7,85l-2.5-2.4c-0.4-0.3-0.7-0.7-1.2-1.1
@@ -194,9 +198,9 @@
                 </svg>
                 
               </div>
-              <h2>Third slide label</h2>
-              <p>la información obtenida para</p>
-              <p>ir en búsqueda de la solución.</p>
+              <h2>Compartimos</h2>
+              <p>la solución para en equipo</p>
+              <p>optimizar los resultados.</p>
             </div>
           </div>
         </div>
@@ -216,13 +220,13 @@
     <div class="col-12 align-items-center">
       <div class="wrap_porque">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 wow slideInLeft">
             <div class="titulo_porque align-self-center w-100">
               <h1>¿Por qué <span>Cali?</span></h1>
             </div>
             
           </div>
-          <div class="col-12 m-t-10">
+          <div data-wow-delay="0.5s" class="col-12 m-t-10 wow slideInLeft">
             <div class="texto_porque align-self-center">
               <p>El Colegio Cali se enfoca en el aprendizaje del
               individuo, que por sí mismo descubre e incorpora 
@@ -230,7 +234,7 @@
             </div>
             
           </div>
-          <div class="col-12  m-t-10">
+          <div data-wow-delay="1s" class="col-12  m-t-10 wow slideInLeft">
             <div class="btn_ver_mas align-self-center">
               <a href="{{ url('/') }}">VER MÁS</a>
             </div>  
@@ -247,7 +251,7 @@
         <div class="row justify-content-center">
           @foreach ($niveles as $nivel)
             <div class="col-12 col-md-4">
-              <div class="niveles_educativos">
+              <div class="niveles_educativos wow zoomIn">
                 <div class="row align-items-center justify-content-center">
                   <div class="col-6 col-sm-4 col-md-12">
                     <a href="{{ url('nivel-educativo/'.$nivel->id) }}">
@@ -272,11 +276,11 @@
       </div>
     </div>
   </div>
-  <div class="row m-t-50">
+  <div class="row m-t-50  wow bounceInUp">
     <div class="col-12">
       <div class="video_testimonial">
         <video class='w-100' id='video_1' controls poster="{{ asset('img/poster_testi_1.jpg') }}">
-          <source src='{{asset('video/dummy_testimonial_1_1.mp4') }}' type="video/mp4">
+          <source src='{{asset('video/colegio_cali.mp4') }}' type="video/mp4">
         </video>
       </div>
       <div class="pleca_testimonial">
@@ -286,7 +290,7 @@
   </div>
   <div class="row back_naranja p-t-100 p-b-100">
     <div class="col-12 col-sm-6">
-      <div class="wrap_titulo_3">
+      <div class="wrap_titulo_3 wow slideInLeft">
         <a href="{{ url('contacto') }}">
           <div class="titulo_3">
             <p>AGENDA</p>
@@ -295,7 +299,7 @@
         </a>
       </div>
     </div>
-    <div class="col-12 col-sm-6 align-middle">
+    <div class="col-12 col-sm-6 align-middle wow slideInRight">
       <div class="texto_opcion">
         <p class='w-100'> <span>Somos</span> </p>
         <p class='w-100'>la mejor</p>
@@ -317,27 +321,27 @@
       <div class="centro_800">
         <div class="row beneficio_cali justify-content-center">
           <div class="col-10 col-md-6  m-t-5">
-            <div>
+            <div class='wow zoomIn'>
               <img class='ico_cali' src="{{ asset('img/ico_cali.svg') }}" alt="">
               <p>Amplios salones.</p>
             </div>
           </div>
-          <div class="col-10 col-md-6  m-t-5">
-            <div class="">
+          <div data-wow-delay="0.5s" class="col-10 col-md-6  m-t-5">
+            <div class="wow zoomIn">
               <img class='ico_cali' src="{{ asset('img/ico_cali.svg') }}" alt="">
               <p>Pizarrones Interactivos.</p>
             </div>
 
           </div>
-          <div class="col-10 col-md-6  m-t-5">
-            <div class="">
+          <div data-wow-delay="0.8s" class="col-10 col-md-6  m-t-5">
+            <div class="wow zoomIn">
               <img class='ico_cali' src="{{ asset('img/ico_cali.svg') }}" alt="">
               <p>Biblioteca.</p>
             </div>
 
           </div>
-          <div class="col-10 col-md-6  m-t-5">
-            <div class="">
+          <div data-wow-delay="1.2s" class="col-10 col-md-6  m-t-5">
+            <div class="wow zoomIn">
               <img class='ico_cali' src="{{ asset('img/ico_cali.svg') }}" alt="">
               <p>Canchas Deportivas.</p>
             </div>
@@ -346,9 +350,106 @@
         </div>
         
       </div>
-      <div class="pleca_final">
+      <div class="pleca_final wow slideInLeft">
         <img src="{{ asset('img/pleca_final.svg') }}" alt="">
       </div>
     </div>
   </div>
+<script src="{{ asset('js/anime.js') }}"></script>
+<script>
+let clickVideo = document.querySelector('.video_testimonial');
+let videoTesti = document.getElementById('video_1');
+
+clickVideo.onclick = function(){
+   if (videoTesti.paused) {
+     videoTesti.play();
+   } else {
+     videoTesti.pause();
+   }
+};
+
+    var lineDrawinge = anime({
+    targets: '#lupita_1 .lines path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutCubic',
+    duration: 2000,
+    begin: function(anim) {
+        document.querySelector('#lupita_1 .lines path').setAttribute("stroke", "white");
+        document.querySelector('#lupita_1 .lines path').setAttribute("fill", "none");
+    },
+    complete: function(anim) {
+        document.querySelector('#lupita_1 .lines path').setAttribute("fill", "white");
+    }
+  });
+
+  var lineDrawinge = anime({
+    targets: '#lupita_1 .lines path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutCubic',
+    duration: 2000,
+    delay: 3800,
+    begin: function(anim) {
+        document.querySelector('#lupita_1 .lines path').setAttribute("stroke", "white");
+        document.querySelector('#lupita_1 .lines path').setAttribute("fill", "none");
+    },
+    complete: function(anim) {
+        document.querySelector('#lupita_1 .lines path').setAttribute("fill", "white");
+    }
+  });
+
+
+  var microsco = anime({
+    targets: '#microscopio_1 .lines path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutCubic',
+    duration: 2000,
+    delay: 7500,
+    begin: function(anim) {
+        document.querySelector('#microscopio_1 .lines path').setAttribute("stroke", "white");
+        document.querySelector('#microscopio_1 .lines path').setAttribute("fill", "none");
+    },
+    complete: function(anim) {
+        document.querySelector('#microscopio_1 .lines path').setAttribute("fill", "white");
+    }
+  });
+
+  var libro = anime({
+    targets: '#librito .lines path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutCubic',
+    duration: 2000,
+    delay: 10500,
+    begin: function(anim) {
+        document.querySelector('#librito .lines path').setAttribute("stroke", "white");
+        document.querySelector('#librito .lines path').setAttribute("fill", "none");
+    },
+    complete: function(anim) {
+        document.querySelector('#librito .lines path').setAttribute("fill", "white");
+    }
+  });
+  var manitas = anime({
+    targets: '#manitas .lines path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: 'easeInOutCubic',
+    duration: 2000,
+    delay: 14000,
+      begin: function(anim) {
+        var letters = document.querySelectorAll(".st6"),
+          i;
+
+        for (i = 0; i < letters.length; ++i) {
+          letters[i].setAttribute("stroke", "white");
+          letters[i].setAttribute("fill", "none");
+        }
+      },
+      complete: function(anim) {
+        var letters = document.querySelectorAll(".st6"),
+          i;
+
+        for (i = 0; i < letters.length; ++i) {  
+          letters[i].setAttribute("fill", "white");
+        }
+      }
+  });
+</script>
 @endsection

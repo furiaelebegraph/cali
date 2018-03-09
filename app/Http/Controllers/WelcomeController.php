@@ -83,6 +83,14 @@ class WelcomeController extends Controller
         //
     }
 
+    public function acerca(){
+        return view('acerca');
+    }
+
+    public function contacto(){
+        return view('contacto');;
+    }
+
     public function nivelesEducativos(){
         
     }

@@ -41,7 +41,7 @@
 		</div>
 	</div>
 	<div class="col-12">
-		<div class="icono_nivel">
+		<div class="icono_nivel wow zoomIn">
 			<img src="{{ asset($nivel->icono) }}" alt="">
 		</div>
 	</div>
@@ -50,8 +50,8 @@
 			<img class='trigulito' src="{{ asset('img/triangulito.svg') }}" alt="">
 		</div>
 		<div class="descrip_nivel">
-			<h2> {{ $nivel->titulo }} </h2>
-			<div class="wrap_descripcion">
+			<h2 class='wow zoomIn'> {{ $nivel->titulo }} </h2>
+			<div class="wrap_descripcion wow zoomIn">
 				{!!$nivel->descripcion!!}
 				
 			</div>
@@ -83,4 +83,17 @@
 	</div>
 </div>
 
+<script>
+	let clickVideo = document.querySelector('.video_testimonial');
+	let videoTesti = document.getElementById('video_1');
+
+clickVideo.onclick = function(){
+   if (videoTesti.paused) {
+     videoTesti.play();
+   } else {
+     videoTesti.pause();
+   }
+};
+
+</script>
 @endsection()

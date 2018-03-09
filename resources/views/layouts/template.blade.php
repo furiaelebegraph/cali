@@ -11,6 +11,7 @@
         <title>Colegio Cali</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
         <link href="{{ asset('css/jquery.fancybox.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/general.css') }}"  rel="stylesheet">
         <!-- Fonts -->
@@ -28,7 +29,7 @@
             </div>
             <div class="col-12 h20">
               <div class="btn_menu_mobil">
-                <a class='align-self-center' href="{{ url('/') }}">ACERCA DE CALI</a>
+                <a class='align-self-center' href="{{ url('acerca-cali') }}">ACERCA DE CALI</a>
               </div>
             </div>
             <div class="col-12 h20">
@@ -36,14 +37,14 @@
                 <a href="{{ url('/') }}">NIVELES EDUCATIVOS</a>
               </div>
             </div>
-            <div class="col-12 h20">
+            {{-- <div class="col-12 h20">
               <div class="btn_menu_mobil">
                 <a href="{{ url('/') }}">INSTALACIONES</a>
               </div>
-            </div>
+            </div> --}}
             <div class="col-12 h20">
               <div class="btn_menu_mobil">
-                <a href="{{ url('/') }}">CONTACTO</a>
+                <a href="{{ url('contacto') }}">CONTACTO</a>
               </div>
             </div>
           </div>
@@ -65,7 +66,7 @@
                         <a class='btn_menu_escri' href="{{ url('/') }}">INICIO</a>
                       </div>
                       <div>
-                        <a class='btn_menu_escri' href="{{ url('nosotros') }}">NOSOTROS</a>
+                        <a class='btn_menu_escri' href="{{ url('acerca-cali') }}">NOSOTROS</a>
                       </div>
                       <div  id="dropdownMenuButton">
                         <a class='btn_menu_escri' href="#">NIVELES EDUCATIVOS</a>
@@ -75,9 +76,9 @@
                             @endforeach
                           </div>
                       </div>
-                      <div>
+                      {{-- <div>
                         <a class='btn_menu_escri' href="{{ url('instalaciones') }}">INSTALACIONES</a>
-                      </div>
+                      </div> --}}
                       <div>
                         <a class='btn_menu_escri' href="{{ url('contacto') }}">CONTACTO</a>
                       </div>
@@ -191,8 +192,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/wow.min.js') }} "></script>
         <script src="{{ asset('js/jquery.fancybox.min.js') }} "></script>
+        <script src="{{ asset('js/wow.min.js') }} "></script>
         <script src="{{ asset('js/anime.js') }}"></script>
         <script src="{{ asset('js/animaciones.js') }}"></script>
         <script src="{{ asset('js/general.js') }}"></script>

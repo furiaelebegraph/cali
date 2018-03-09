@@ -42,5 +42,7 @@ Route::group(['prefix' => 'adminis'], function(){
 	Auth::routes();
 });
 
+Route::get('/acerca-cali', 'WelcomeController@acerca')->name('acerca');
+
 Route::get('/home', 'HomeController@index')->name('home');
 

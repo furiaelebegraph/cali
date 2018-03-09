@@ -152,6 +152,21 @@ p
         line-height: 37px
         text-shadow: 5px 5px 5px rgba(0,0,0,0.5)
 
+.descubre_cali
+  position: absolute
+  z-index: 10
+  left: auto
+  margin-top: auto
+  right: 0
+  width: 250px
+  height: 58px
+  bottom: 82px
+  right: -10px
+  img
+    width: 100%
+    &:hover
+      cursor: pointer
+
 .texto_porque, .btn_ver_mas 
   padding-left: 10px
 
@@ -361,11 +376,11 @@ p
     stroke-width: .2em
 
 .galeria_landing
-  height: 100vh  
+  height: 100vh
   top: 0    
   position: fixed
   z-index: 3
-  transition: all 1s linear
+  transition: all 0.3s linear
   .carousel
     height: 100%
     .carousel-inner
@@ -387,8 +402,15 @@ p
             font-size: 30px
             font-family: avenirBold
 
+.texto_asi_apredemos
+  max-width: 780px
+  width: 90%
+  margin: 0 auto
+  text-align: justify
+
 .galeria_escondida
   height: 0vh
+
 .iconos_inicio_1
   width: 300px
   margin: 0 auto
@@ -426,6 +448,24 @@ p
   text-decoration: none
   display: block
 
+.texto_asi_apredemos
+  max-width: 650px
+  width: 90%
+  h3
+    font-family: avenirBold
+    font-size: 25px
+    color: $naranja
+
+
+
+.titulo_acerca
+  h1
+    font-size: 50px
+    color: $naranja
+    span
+      font-family: avenirBold
+      font-size: 50px
+      color: $gris
 
 @media (min-width:600px)
   .escritorio
@@ -474,3 +514,11 @@ p
     text-align: left
   .footer_der
     text-align: right
+  .titulo_acerca
+    h1
+      font-size: 100px
+      color: $naranja
+      span
+        font-family: avenirBold
+        font-size: 100px
+        color: $gris
