@@ -34,7 +34,6 @@ Route::group(['middleware'=> 'auth'],function(){
 
 Route::post('enviar_correo', 'WelcomeController@enviarCorreo');
 
-Route::get('enviar_correo', 'WelcomeController@enviarCorreo');
 
 Route::get('nivel-educativo/{id}','NivelController@nivelEducativo')->name('nivel.nivel-educativo');
 

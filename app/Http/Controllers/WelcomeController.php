@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Nivel;
+use App\Mail\EnviarCorreo;
+use Illuminate\Support\Facades\Mail;
 
 class WelcomeController extends Controller
 {
@@ -83,10 +85,25 @@ class WelcomeController extends Controller
         //
     }
 
+    public function enviarCorreo(Request $request){
+        $rules = [
+            'nombre'    => 'required|max:255',
+            'correo'    => 'required|email',
+            'contenido' => 'required|min:5',
+        ];
+        $mensaje = [
+            'required' => 'El :attribute es necesario.'
+        ];
+
+        $this->validate($request, $rules, $mensaje);
+
+        $input = $request->all();
+        Mail::to('karoll.rodriguez@elebegraph.com')->send(new EnviarCorreo($input));
+        return back()->with('mensaje', 'Su correo fue enviado!');
+    }
     public function acerca(){
         return view('acerca');
     }
-
     public function contacto(){
         return view('contacto');;
     }
