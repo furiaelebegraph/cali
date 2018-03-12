@@ -58,10 +58,10 @@
               <div class="col-12">
                 <div class="escritorio nav_mobil_cali">
                   <div class="row justify-content-between sombra_nav">
-                    <div class="col-4 p-l-40">
+                    <div class="col-4 p-l-20">
                       <a href="{{ url('/') }}"><img class='icono_logo_20' src="{{ asset('img/logo_cali_20.png') }}" alt=""></a>
                     </div>
-                    <div class="col-8 d-flex justify-content-end align-items-center p-r-40">
+                    <div class="col-8 d-flex justify-content-end align-items-center  p-r-20">
                       <div>
                         <a class='btn_menu_escri' href="{{ url('/') }}">INICIO</a>
                       </div>
@@ -196,6 +196,7 @@
         <script src="{{ asset('js/wow.min.js') }} "></script>
         <script src="{{ asset('js/anime.js') }}"></script>
         <script src="{{ asset('js/animaciones.js') }}"></script>
+        @yield('cargarjs')
         <script src="{{ asset('js/general.js') }}"></script>
     </body>
 </html>

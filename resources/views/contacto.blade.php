@@ -12,6 +12,7 @@
 				<div class="form-row">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+<<<<<<< HEAD
 					<div class="form-group col-11 col-md-6">
 						<input type="text" name='nombre' class="form-control" id="exampleInputText" aria-describedby="nombreHelp" placeholder="NOMBRE">
 						@if ($errors->has('nombre')) <p class="help-block">{{ $errors->first('nombre') }}</p> @endif
