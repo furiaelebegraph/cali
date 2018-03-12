@@ -3,7 +3,7 @@
 @section('content')
   
   <!-- Galeria Inicio -->
-  <div class="galeria_landing escritorio">
+  <div class="galeria_landing escritorio" id='galeria_magica'>
     <div class='descubre_cali'>
       <img src="{{ asset('img/descubre_cali.png') }}" alt="">
     </div>
@@ -357,6 +357,18 @@
   </div>
 <script src="{{ asset('js/anime.js') }}"></script>
 <script>
+
+var cookie = document.cookie;
+  if (cookie.indexOf('visited=', 0) == -1) {
+      var expiration = new Date();
+      expiration.setDate(expiration.getDate()+1);
+      document.cookie = 'visited=1;expires=' + expiration + ';path=/';
+
+      var element = document.getElementById('galeria_magica');
+      element.style.display = 'block';
+  }
+
+
 let clickVideo = document.querySelector('.video_testimonial');
 let videoTesti = document.getElementById('video_1');
 

@@ -58,10 +58,10 @@
               <div class="col-12">
                 <div class="escritorio nav_mobil_cali">
                   <div class="row justify-content-between sombra_nav">
-                    <div class="col-4 p-l-10">
+                    <div class="col-4 p-l-40">
                       <a href="{{ url('/') }}"><img class='icono_logo_20' src="{{ asset('img/logo_cali_20.png') }}" alt=""></a>
                     </div>
-                    <div class="col-8 d-flex justify-content-end align-items-center  p-r-10">
+                    <div class="col-8 d-flex justify-content-end align-items-center p-r-40">
                       <div>
                         <a class='btn_menu_escri' href="{{ url('/') }}">INICIO</a>
                       </div>

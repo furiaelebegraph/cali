@@ -2,7 +2,6 @@ new WOW().init();
 $('.niveles_educativos');
 
 
-
 let iconito = document.getElementById('nav-icon3');
 let menu_mobil = document.querySelector('.menu_mobil');
 
