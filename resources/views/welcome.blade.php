@@ -356,24 +356,6 @@
     </div>
   </div>
 <script src="{{ asset('js/anime.js') }}"></script>
-<<<<<<< HEAD
-<script>
-
-var cookie = document.cookie;
-  if (cookie.indexOf('visited=', 0) == -1) {
-      var expiration = new Date();
-      expiration.setDate(expiration.getDate()+1);
-      document.cookie = 'visited=1;expires=' + expiration + ';path=/';
-
-      var element = document.getElementById('galeria_magica');
-      element.style.display = 'block';
-  }
-
-
-let clickVideo = document.querySelector('.video_testimonial');
-let videoTesti = document.getElementById('video_1');
-=======
->>>>>>> 4935ca693a16ddc6da0e60ebc7b160c3aac9bd74
 
 @endsection
 @section('cargarjs')

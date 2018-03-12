@@ -1,11 +1,15 @@
 
 $(document).ready(function () {
-    if (localStorage.getItem('wasVisited') !== undefined) {
-        $("#gale_inicio").hide();
-    } else {
-        localStorage.setItem('wasVisited', 1);
-        $("#gale_inicio").delay(5000).fadeOut(500);
-    }
+
+var cookie = document.cookie;
+  if (cookie.indexOf('visited=', 0) == -1) {
+      var expiration = new Date();
+      expiration.setDate(expiration.getDate()+1);
+      document.cookie = 'visited=1;expires=' + expiration + ';path=/';
+
+      var element = document.getElementById('galeria_magica');
+      element.style.display = 'block';
+  }
 });
 
 let clickVideo = document.querySelector('.video_testimonial');
